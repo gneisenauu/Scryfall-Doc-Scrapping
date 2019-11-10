@@ -4,9 +4,11 @@ from ..items import ScryfallscrapingItem #import class from another directory
 
 class TappedoutspiderSpider(scrapy.Spider):
 	#to run: use 'scrapy crawl tappedOutSpider -o output.json' << writes output to json file
+	#note: TODO: delete output.json after process is complete, otherwise file gets overwritten
 	name = 'tappedOutSpider'
 
-	start_urls = ['http://tappedout.net/mtg-decks/yawgmoth-zombiesish/'] #TEMPORARY. Todo: get custom url from helper function
+	start_urls = ['http://tappedout.net/mtg-decks/scraper-sample/?cb=1573109637']
+	# start_urls = ['http://tappedout.net/mtg-decks/yawgmoth-zombiesish/'] #TEMPORARY. Todo: get custom url from helper function
 
 	def parse(self, response):
 		items = ScryfallscrapingItem() #stores instance of our ScryfallscrapingItem's class

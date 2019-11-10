@@ -17,12 +17,10 @@ def exportCardNames():
 			#ignore tokens, emblems, etc.
 			if card[0] == '\n':
 				card = card.strip()
-				print(card)
 				card_name_array.append(card)
 			#only work with proper cards
 			else:
 				continue
-	print(card_name_array)
 	file.close()
 
 	return card_name_array
